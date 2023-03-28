@@ -11,7 +11,7 @@ class Notes(generics.ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        qs = Note.objects.filter(user=user)
+        qs = Note.objects.filter(user=user).order_by('-updated')
         return qs
 
 
