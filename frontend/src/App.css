@@ -15,7 +15,7 @@
 }
 
 .dark {
-  --color-main: #f68657;
+  --color-main: #D58BDD;
   --color-text: #d6d1d1;
   --color-dark: #f5f6f7;
   --color-gray: #999;
@@ -252,7 +252,7 @@ a {
   color: var(--color-main);
   font-size: 24px;
   font-weight: 600;
-  margin: 10px 0 25px 25px;
+  margin: 15px 0 25px 25px;
 }
 
 .loginform{
@@ -311,6 +311,8 @@ a {
   text-align: center;
   font-size: 25px;
   margin: 15px 0 15px 0;
+  border-bottom: 1px solid var(--color-lighter);
+  padding-bottom: 20px;
 }
 
 .welcome > span {
@@ -322,3 +324,4 @@ a {
   font-size: 22px;
   margin-top: 20px;
 }
+

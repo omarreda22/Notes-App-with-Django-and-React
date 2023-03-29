@@ -2,6 +2,7 @@ import React,{useContext, useState, useEffect} from 'react'
 import AuthContext from '../context/AuthContext'
 
 import ListItem from '../components/ListItem'
+import AddButton from '../components/AddButton'
 
 const NotesList = () => {
   let {user, authToken, logoutUser} = useContext(AuthContext)
@@ -17,7 +18,7 @@ const NotesList = () => {
   }, [])
 
   let getNotes = async () =>{
-    let response = await fetch("http://localhost:8000/api/notes/", {
+    let response = await fetch("https://mynotesapp.herokuapp.com/api/notes/", {
       method:"GET",
       headers:{
         'Content-Type': 'application/json',
@@ -43,6 +44,7 @@ const NotesList = () => {
             <ListItem key={note.id} note={note}/>
           ))}
       </div>
+      <AddButton />
     </div>
   )
 }

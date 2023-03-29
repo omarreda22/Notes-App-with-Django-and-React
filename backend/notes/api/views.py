@@ -9,10 +9,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 @api_view(['GET'])
 def get_routes(request):
     routes = [
-        'http://localhost:8000/api/token',
-        'http://localhost:8000/api/token/refresh',
         'http://localhost:8000/api/notes',
         'http://localhost:8000/api/create',
+        'http://localhost:8000/api/token',
+        'http://localhost:8000/api/token/refresh',
     ]
     return Response(routes)
 

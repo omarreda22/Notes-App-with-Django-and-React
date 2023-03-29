@@ -11,6 +11,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from accounts.views import Register
+
 app_name = 'api'
 
 
@@ -20,6 +22,7 @@ urlpatterns = [
     path('create/', NoteCreate.as_view()),
     path('note/<int:id>', NoteGetUpdateDelete.as_view(), name='my_note'),
 
+    path('register/', Register.as_view()),
     path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

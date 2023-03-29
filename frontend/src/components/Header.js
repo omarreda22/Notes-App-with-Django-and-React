@@ -17,7 +17,7 @@ const Header = () => {
         }
         {
           !user && 
-          <span className="betweenlinks">-</span>
+          <span className="betweenlinks">/</span>
         }
         {
           !user &&

@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
 
     let loginUser = async (e)=>{
         e.preventDefault();
-        let response = await fetch("http://localhost:8000/api/token/",{
+        let response = await fetch("https://mynotesapp.herokuapp.com/api/token/",{
             method:'POST',
             headers:{
                 'Content-type': 'application/json'
@@ -48,12 +48,13 @@ export const AuthProvider = ({children}) => {
     }
 
     let updateToken = async()=>{
-        let response = await fetch("http://localhost:8000/api/token/refresh/",{
+        if (!authToken) return 
+        let response = await fetch("https://mynotesapp.herokuapp.com/api/token/refresh/",{
             method:"POST",
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({'refresh': authToken.refresh})
+            body: JSON.stringify({'refresh': authToken?.refresh})
         })
         let data = await response.json()
         if(response.status === 200){
@@ -82,12 +83,34 @@ export const AuthProvider = ({children}) => {
         return ()=>clearInterval(interval)
     }, [authToken, loading])
 
+    let registerUser = async (e) =>{
+        e.preventDefault();
+        let response = await fetch("https://mynotesapp.herokuapp.com/api/register/", {
+            method:"POST",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'email': e.target.email.value,
+                'username': e.target.username.value,
+                'password': e.target.password.value,
+                'password2': e.target.password2.value
+            })
+        })
+        if(response.status === 201){
+            history('/login')
+        }else{
+            alert("invalid information")
+        }
+
+    }
 
     let contextData = {
         user:user,
         loginUser: loginUser,
         authToken:authToken,
-        logoutUser:logoutUser
+        logoutUser:logoutUser,
+        registerUser:registerUser
     }
 
     return(
