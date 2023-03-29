@@ -18,7 +18,7 @@ const NotesList = () => {
   }, [])
 
   let getNotes = async () =>{
-    let response = await fetch("https://mynotesapp.herokuapp.com/api/notes/", {
+    let response = await fetch("http://localhost:8000/api/notes/", {
       method:"GET",
       headers:{
         'Content-Type': 'application/json',

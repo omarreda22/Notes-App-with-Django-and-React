@@ -16,7 +16,7 @@ const MyNote = () => {
 
   let getNote = async()=>{
     if (id == 'create') return
-    let response = await fetch(`https://mynotesapp.herokuapp.com/api/note/${id}`,{
+    let response = await fetch(`http://localhost:8000/api/note/${id}`,{
       method:"GET",
       headers:{
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const MyNote = () => {
 
   let updateNote = async () =>{
     if (id === 'create') return 
-    let response = await fetch(`https://mynotesapp.herokuapp.com/api/note/${id}`, {
+    let response = await fetch(`http://localhost:8000/api/note/${id}`, {
       method: 'PUT',
       headers:{
         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const MyNote = () => {
   }
 
   let deleteNote = async ()=>{
-    let response = await fetch(`https://mynotesapp.herokuapp.com/api/note/${id}`,{
+    let response = await fetch(`http://localhost:8000/api/note/${id}`,{
       method:"DELETE",
       headers:{
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const MyNote = () => {
   }
 
   let createNote = async ()=>{
-    let response = await fetch("https://mynotesapp.herokuapp.com/api/create/",{
+    let response = await fetch("http://localhost:8000/api/create/",{
       method:"POST",
       headers:{
         'Content-Type': 'application/json',

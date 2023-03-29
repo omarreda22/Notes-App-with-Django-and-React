@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
 
     let loginUser = async (e)=>{
         e.preventDefault();
-        let response = await fetch("https://mynotesapp.herokuapp.com/api/token/",{
+        let response = await fetch("http://localhost:8000/api/token/",{
             method:'POST',
             headers:{
                 'Content-type': 'application/json'
@@ -49,7 +49,7 @@ export const AuthProvider = ({children}) => {
 
     let updateToken = async()=>{
         if (!authToken) return 
-        let response = await fetch("https://mynotesapp.herokuapp.com/api/token/refresh/",{
+        let response = await fetch("http://localhost:8000/api/token/refresh/",{
             method:"POST",
             headers:{
                 'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ export const AuthProvider = ({children}) => {
 
     let registerUser = async (e) =>{
         e.preventDefault();
-        let response = await fetch("https://mynotesapp.herokuapp.com/api/register/", {
+        let response = await fetch("http://localhost:8000/api/register/", {
             method:"POST",
             headers:{
                 'Content-Type': 'application/json'
