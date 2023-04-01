@@ -9,9 +9,14 @@ Notes App With Django/DjangoRestFramework in Backend and React in Frontend
 
 
 ## Demo, and you can [go live](https://mynotesapplication.netlify.app/)
-
 <p align="center">
   <img align="center" src="https://github.com/omarreda22/Notes-App-with-Django-and-React/blob/main/frontend/src/assets/my_notes.gif" style="width:400px">
+</p>
+
+
+## Backend Server Demo
+<p align="center">
+  <img align="center" src="https://github.com/omarreda22/Notes-App-with-Django-and-React/blob/main/frontend/src/assets/backend_server.gif">
 </p>
 
 
